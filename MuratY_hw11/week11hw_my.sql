@@ -44,7 +44,7 @@ conn.close()
 
 import psycopg2
 
-conn=psycopg2.connect("dbname=class4 user=postgres password=murat3216")
+conn=psycopg2.connect("dbname=class4 user=postgres password=***")
 cur=conn.cursor()
 command="""CREATE TABLE payment (
     rental_id SERIAL PRIMARY KEY NOT NULL,
@@ -148,7 +148,7 @@ DELETE FROM language WHERE language_id=4;
 15- 3 tablonun son satirini C ile silinmiş.
 
 import psycopg2
-conn=psycopg2.connect("dbname=class4 user=postgres password=murat3216")
+conn=psycopg2.connect("dbname=class4 user=postgres password=***")
 cur=conn.cursor()
 cur.execute('DELETE FROM payment WHERE rental_id=5')
 cur.execute('DELETE FROM rental WHERE rental_id=4 ')
@@ -164,7 +164,7 @@ DROP TABLE film;
 18- 1 tabloyu C ile silinmiş.
 
 import psycopg2
-conn=psycopg2.connect("dbname=class4 user=postgres password=murat3216")
+conn=psycopg2.connect("dbname=class4 user=postgres password=***")
 cur=conn.cursor()
 cur.execute('DROP TABLE film_actor')
 
@@ -183,7 +183,7 @@ SELECT language_id, name FROM language;
 20- Kalan tablolardan 1 tanesinin 2 veya 3 sutununu C ile baska bir tablo olarak olusturun.
 
 import psycopg2
-conn=psycopg2.connect("dbname=class4 user=postgres password=murat3216")
+conn=psycopg2.connect("dbname=class4 user=postgres password=***")
 cur=conn.cursor()
 command="""
 CREATE TABLE address(
@@ -204,7 +204,7 @@ TRUNCATE TABLE language;
 23- Tablolardan 1 tanesini C ile truncate edin.
 
 import psycopg2
-conn=psycopg2.connect("dbname=class4 user=postgres password=murat3216")
+conn=psycopg2.connect("dbname=class4 user=postgres password=***")
 cur=conn.cursor()
 command="""TRUNCATE TABLE payment;"""
 cur.execute(command)
@@ -221,7 +221,7 @@ DROP TABLE customer;
 26- 2 tabloyu C silin.
 
 import psycopg2
-conn=psycopg2.connect("dbname=class4 user=postgres password=murat3216")
+conn=psycopg2.connect("dbname=class4 user=postgres password=***")
 cur=conn.cursor()
 command="""DROP TABLE film_category;
            DROP TABLE rental;"""
@@ -234,7 +234,7 @@ conn.close()
 30- Import ettiğiniz bu tabloyu C ile silin.
 
 import psycopg2
-conn=psycopg2.connect("dbname=class4 user=postgres password=murat3216")
+conn=psycopg2.connect("dbname=class4 user=postgres password=***")
 cur=conn.cursor()
 command="""DROP TABLE staff;"""
 cur.execute(command)
@@ -265,7 +265,7 @@ SELECT COUNT(*),manager_staff_id FROM store GROUP BY manager_staff_id ORDER BY C
 
 SELECT rating FROM film
 WHERE film_id IN (SELECT film_id FROM film_actor WHERE actor_id=(
-SELECT actor_id FROM actor WHERE first_name || ' ' ||last_name = 'GENE WİLLİS'))
+SELECT actor_id FROM actor WHERE first_name || ' ' ||last_name = 'Gene Willis'))
 "R"
 "PG-13"
 "R"
